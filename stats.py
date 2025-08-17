@@ -15,3 +15,8 @@ def get_characters(f):
             characters[letters] += 1
     return characters
 
+#take the dictionary of letters and organize them by number of occurances, exclude non alpha characters
+def get_report(f):
+    report = sorted([{'letter': k, 'value': v} for k, v in f.items() if k.isalpha()], key=lambda x: x['value'], reverse=True)
+    
+    return report
